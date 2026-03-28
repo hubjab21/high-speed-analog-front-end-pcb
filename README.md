@@ -72,42 +72,6 @@ Simulation was used to:
 
 ---
 
-### 📉 Frequency Response
-
-![Frequency Response](images/frequency-response.png)
-
----
-
-## 📡 Spectrum Analysis
-
-### 📊 Amplified Signal
-
-![Spectrum](images/spectrum-amplified-signal.png)
-
-* Example: **3.76 MHz → -14 dBm**
-* Noticeable attenuation at higher frequencies
-
----
-
-### 📉 Bandwidth Limitation
-
-![Baseline](images/spectrum-baseline.png)
-
-* Signal amplitude decreases with frequency
-* Indicates limited bandwidth
-
----
-
-### 🔇 Noise (Input)
-
-![Noise Input](images/spectrum-noise-input.png)
-
-### 🔊 Noise (Output)
-
-![Noise Output](images/spectrum-noise-output.png)
-
----
-
 ## 📊 Results
 
 * Measured gain: **~36.65 dB**
