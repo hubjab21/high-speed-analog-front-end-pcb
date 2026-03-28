@@ -2,9 +2,6 @@
 
 High-speed differential amplifier designed using **LMH5401** for RF / ADC front-end applications.
 
-📄 Full report:
-👉 [Project Report (PDF)](./Analogowe_układy_peryferyjne_w_systemach_cyfrowych.pdf)
-
 ---
 
 ## 📌 Overview
