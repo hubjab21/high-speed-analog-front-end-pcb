@@ -22,22 +22,6 @@ The circuit is based on the **LMH5401**, a wideband amplifier capable of operati
 
 ---
 
-## 🛠 Design
-
-### 🔌 Schematic (KiCad)
-
-![Schematic](images/kicad-schematic.png)
-
-### 🧩 PCB Layout
-
-![PCB](images/pcb-top-view.png)
-
-### 🧱 3D View
-
-![3D PCB](images/kicad-3d-view.png)
-
----
-
 ## 🔬 Simulation (LTspice)
 
 ![LTspice](images/ltspice-schematic.png)
@@ -48,6 +32,8 @@ LTspice simulation was used to:
 * verify circuit stability
 * estimate gain and frequency response
 * evaluate output noise performance
+
+---
 
 ### 🔧 LTspice Setup
 
@@ -69,10 +55,10 @@ Contents:
 
 The LMH5401 SPICE model and symbol used in this project are based on files provided by **Texas Instruments**.
 
-Official product page:  
+Official product page:
 https://www.ti.com/product/LMH5401
 
-Direct download (SPICE model):  
+Direct download (SPICE model):
 https://www.ti.com/lit/zip/sbombp6
 
 The download link was verified as accessible on **30.03.2026**.
@@ -90,23 +76,31 @@ The download link was verified as accessible on **30.03.2026**.
 
 ---
 
-### 🔊 Noise Analysis
+## 🛠 Design
 
-Noise simulation was used to estimate the **integrated output noise (RMS)** in the frequency range:
+### 🔌 Schematic (KiCad)
 
-```
-100 Hz – 100 kHz
-```
+![Schematic](images/kicad-schematic.png)
 
-Results can be accessed in LTspice via:
+### 🧱 3D View
 
-```
-View → SPICE Error Log
-```
+![3D PCB](images/kicad-3d-view.png)
+
+### 🧩 PCB Layout
+
+![PCB](images/pcb-top-view.png)
 
 ---
 
-## 📈 Measurements
+## 🧪 Equipment
+
+* Rigol DSA815 – Spectrum Analyzer
+* Rigol MSO5204 – Oscilloscope
+* Siglent SDG2122X – Signal Generator
+
+---
+
+## 📈 Experimental Results
 
 ### 🎛 Signal Generator Setup
 
@@ -178,14 +172,6 @@ This is significantly lower than the expected GHz-range bandwidth of the LMH5401
 ├── Projekt_AUE.kicad_sch
 └── README.md
 ```
-
----
-
-## 🧪 Equipment
-
-* Rigol DSA815 – Spectrum Analyzer
-* Rigol MSO5204 – Oscilloscope
-* Siglent SDG2122X – Signal Generator
 
 ---
 
