@@ -18,7 +18,7 @@ The circuit is based on the **LMH5401**, a wideband amplifier capable of operati
 * Achieve high gain (~40 dB target)
 * Maintain wide bandwidth
 * Ensure proper impedance matching (RF domain)
-* Validate performance through measurements
+* Validate performance through simulations and measurements
 
 ---
 
@@ -40,13 +40,69 @@ The circuit is based on the **LMH5401**, a wideband amplifier capable of operati
 
 ## 🔬 Simulation (LTspice)
 
-![LTspice](images/ltspice-schematic.jpg)
+![LTspice](images/ltspice-schematic.png)
 
-Simulation was used to:
+LTspice simulation was used to:
 
 * select feedback resistor values
-* verify stability
+* verify circuit stability
 * estimate gain and frequency response
+* evaluate output noise performance
+
+### 🔧 LTspice Setup
+
+Simulation files are located in:
+
+```
+LTspice/
+```
+
+Contents:
+
+* `lmh5401_test.asc` – main simulation schematic
+* `LMH5401.lib` – SPICE model
+* `LMH5401.asy` – LTspice symbol
+
+---
+
+### 📥 SPICE Model (Download)
+
+The LMH5401 SPICE model and symbol used in this project are based on files provided by **Texas Instruments**.
+
+Official product page:  
+https://www.ti.com/product/LMH5401
+
+Direct download (SPICE model):  
+https://www.ti.com/lit/zip/sbombp6
+
+The download link was verified as accessible on **30.03.2026**.
+
+---
+
+### 📊 Simulation Directives
+
+```spice
+.ac dec 1000 100 1G
+.tran 0 1 0 10m
+.noise V(OUT+) Vin dec 100 100 100Meg
+.measure noise NOISERMS integ V(onoise) from 100 to 100k
+```
+
+---
+
+### 🔊 Noise Analysis
+
+Noise simulation was used to estimate the **integrated output noise (RMS)** in the frequency range:
+
+```
+100 Hz – 100 kHz
+```
+
+Results can be accessed in LTspice via:
+
+```
+View → SPICE Error Log
+```
 
 ---
 
@@ -68,7 +124,7 @@ Simulation was used to:
 
 * Measured gain: **~68× (~36.6 dB)**
 * Proper differential operation
-* 180° phase shift between signals
+* 180° phase shift between outputs
 
 ---
 
@@ -76,17 +132,13 @@ Simulation was used to:
 
 * Measured gain: **~36.65 dB**
 * Target gain: **~40 dB**
-* Effective bandwidth: **~3.7 MHz** (significantly lower than expected)
+* Effective bandwidth: **~3.7 MHz**
 
-According to the project report:
+This is significantly lower than the expected GHz-range bandwidth of the LMH5401, indicating strong influence of:
 
-
-* Early signal attenuation (~3.7 MHz) was observed
-* Performance degradation likely caused by:
-
-  * impedance mismatch
-  * parasitic effects
-  * PCB layout limitations
+* PCB parasitics
+* impedance mismatch
+* non-RF layout constraints
 
 ---
 
@@ -112,11 +164,19 @@ According to the project report:
 
 ```
 ├── bom/
+│   └── ibom.html
 ├── images/
+├── LTspice/
+│   ├── LMH5401.asy
+│   ├── LMH5401.lib
+│   └── lmh5401_test.asc
 ├── manufacturing/
+│   └── Gerber.zip
+├── Projekt_AUE.csv
 ├── Projekt_AUE.kicad_pcb
+├── Projekt_AUE.kicad_pro
 ├── Projekt_AUE.kicad_sch
-├── README.md
+└── README.md
 ```
 
 ---
@@ -133,8 +193,9 @@ According to the project report:
 
 **Project Team:**
 
-- Hubert Jabłoński <br> 
-- Jakub Domin <br>
-- Wojciech Broda <br>
+* Hubert Jabłoński
+* Jakub Domin
+* Wojciech Broda
 
 AGH University of Science and Technology
+
