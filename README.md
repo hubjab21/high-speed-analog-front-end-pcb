@@ -1,4 +1,4 @@
-# LMH5401 Differential Amplifier (AGH Project)
+# LMH5401 Differential Amplifier
 
 High-speed differential amplifier designed using **LMH5401** for RF / ADC front-end applications.
 
