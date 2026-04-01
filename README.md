@@ -33,9 +33,10 @@ LTspice simulation (version 26) was used to:
 - estimate gain and frequency response 
 - evaluate output noise performance 
 
-LTspice was downloaded from: <br><br>
-https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html <br><br>
-Download links were available as of 01.04.2026.
+Both versions are available from the Analog Devices website: <br>
+https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html <br><br> 
+
+The main page provides access to LTspice 26 is available in the downloads section (access verified on 02.04.2026).
 
 ---
 
